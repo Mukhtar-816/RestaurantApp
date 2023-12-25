@@ -1,79 +1,29 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Here's an Restaurant fully working App with Usage of React-Native Frame work, along with redux toolkit.
+here are some images of it.
 
-# Getting Started
+![Screenshot_2023-12-25-16-20-13-168_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/d2df2630-09e2-4a6e-ab59-6eb3f003f9ef)
+![Screenshot_2023-12-25-16-22-19-656_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/05f0b2d7-4b9f-478c-9973-0be607f535a5)
+![Screenshot_2023-12-25-16-20-20-087_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/1bd9edad-c7f7-4012-b005-68621ab058a5)
+![Screenshot_2023-12-25-16-21-34-069_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/788750bf-d906-4781-b943-e703d07dd6f4)
+![Screenshot_2023-12-25-16-20-40-884_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/56723952-b27f-4c20-b8de-363f5fd7931b)
+![Screenshot_2023-12-25-16-21-23-807_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/243c4789-7c96-4307-8f4a-ca4569b1023a)
+![Screenshot_2023-12-25-16-20-26-308_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/7503f879-01c8-4da7-b906-9c9fbe19754a)
+![Screenshot_2023-12-25-16-21-15-093_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/856aec68-000b-4156-be9f-b9126eab5081)
+![Screenshot_2023-12-25-16-21-02-606_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/4f7aa040-0e43-44d9-9490-bb81440665b2)![Screenshot_2023-12-25-16-22-10-936_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/8677963d-da1f-4b4b-a470-dde3135dd974)
+![Screenshot_2023-12-25-16-22-03-908_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/c8bd4f69-4838-4f6a-b8ae-fd6dde4cd990)
+![Screenshot_2023-12-25-16-21-34-069_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/e2bf6f66-9aa1-462f-b71f-38133da90aa3)
+![Screenshot_2023-12-25-16-21-23-807_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/2b32c096-3496-44ee-ac3b-8a21da10c1cc)
+![Screenshot_2023-12-25-16-22-15-377_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/be314b0f-ebac-41bc-88f8-6e101f250b52)
+![Screenshot_2023-12-25-16-21-15-093_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/422db64f-e184-45d0-a102-c55be708b02b)
+![Screenshot_2023-12-25-16-22-10-936_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/4c288bc5-a192-4417-9adb-528c34abb894)
+![Screenshot_2023-12-25-16-21-02-606_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/4a9954c3-141f-40da-ae19-dba6faaeccc6)
+![Screenshot_2023-12-25-16-22-03-908_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/dec0cf38-40a8-4026-97ff-134dd90b0f4f)
+![Screenshot_2023-12-25-16-20-47-270_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/cc099ece-8857-4582-a7f7-1508d0a4571f)
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
-
-## Step 1: Start the Metro Server
-
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
-
-To start Metro, run the following command from the _root_ of your React Native project:
-
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+![Screenshot_2023-12-25-16-20-20-087_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/f5338a17-d299-4ee9-99f0-f73e2b72720d)
+![Screenshot_2023-12-25-16-20-13-168_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/7d014876-c417-41db-a6fb-0d10e6650e29)
+![Screenshot_2023-12-25-16-20-47-270_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/1ef1d704-c480-4d8b-9254-eedb0cd9628a)
+![Screenshot_2023-12-25-16-20-40-884_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/9bd5a89d-6c3d-4a1f-8a2e-90d08cbf55b0)
+![Screenshot_2023-12-25-16-22-19-656_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/d19682fe-870b-47a5-8dbf-3d5ad55d12da)
+![Screenshot_2023-12-25-16-20-26-308_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/9ac9e00b-a5fb-41c2-9b96-7fbc8f95d7a6)
+![Screenshot_2023-12-25-16-22-15-377_com app](https://github.com/mrxalone1/RestaurantApp/assets/115702231/8f00d00c-72b6-4da2-9fb9-839b5d35f876)
