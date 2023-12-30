@@ -12,12 +12,9 @@ import Orderscreen from '../Order/Orderscreen';
 import PaymentDetailsscreen from '../PaymentDetails/PaymentDetailsscreen';
 import Verificationscreen from '../Verification/Verificationscreen';
 import BottomTabsNav from './BottomTabsNav';
-import Profilescreen from '../Profile/Profilescreen';
-import Onboarding1 from '../Onboarding/Onboardingscreen1';
-import Onboarding2 from '../Onboarding/Onboarding2';
-import Onboarding3 from '../Onboarding/Onboarding3';
 import EditProfilescreen from '../EditProfile/EditProfilescreen';
 import Checkoutscreen from '../Checkout/Checkoutscreen';
+import OnBoarding from '../Onboarding/Onboardingscreen';
 
 const MainStackNav = () => {
 
@@ -26,9 +23,7 @@ const MainStackNav = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name='OnBoarding1' component={Onboarding1} />
-                <Stack.Screen name='OnBoarding2' component={Onboarding2}/>
-                <Stack.Screen name='OnBoarding3' component={Onboarding3}/>
+                <Stack.Screen name='OnBoarding' component={OnBoarding} />
                 <Stack.Screen name='SignUp' component={SignUpscreen} />
                 <Stack.Screen name='SignIn' component={SignInscreen} />
                 <Stack.Screen name='ForgotPassword' component={ForgotPasswordscreen} />
@@ -39,8 +34,8 @@ const MainStackNav = () => {
                 <Stack.Screen name='Checkout' component={Checkoutscreen} />
                 <Stack.Screen name='PaymentDetails' component={PaymentDetailsscreen} />
                 <Stack.Screen name='Verification' component={Verificationscreen} />
-                <Stack.Screen name='Cart' component={Cartscreen}/>
-                <Stack.Screen name='EditProfile' component={EditProfilescreen}/>
+                <Stack.Screen name='Cart' component={Cartscreen} />
+                <Stack.Screen name='EditProfile' component={EditProfilescreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )

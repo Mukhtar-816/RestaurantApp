@@ -7,6 +7,7 @@ import TextForm from '../../components/TextForm.component';
 import SvgImport from '../../components/SvgImport.component'
 import google from '../../assets/Svgs/google'
 import Button from '../../components/Button.component'
+import { useSelector } from 'react-redux'
 
 const OtherOptionsButton = ({ ...props }) => {
   return (
@@ -38,6 +39,9 @@ const SignInscreen = ({ navigation }) => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
+  //constants
+  const Users = useSelector((state) => state.Users);
+
   //functions
   function handleGoogleSignIn() {
     // signIn with Google account
@@ -45,8 +49,26 @@ const SignInscreen = ({ navigation }) => {
   };
 
   function handleSignIn() {
-    // sign in with account
-    navigation.navigate('Home')
+    if (email != null || password != null) {
+
+      if (email.length > 0 && password.length > 0) {
+        if (Users.length != 0) {
+          Users.map(item => {
+            if (item.email == email && item.password == password) {
+              Alert.alert('Successfully Logged In')
+              navigation.navigate('Home')
+            }
+            else { Alert.alert('Invalid Credentials') }
+
+          })
+        }
+        else { Alert.alert('Invalid Credentials') }
+
+      }
+      else { Alert.alert('Error', 'Empty credentials') }
+
+    }
+    else { Alert.alert('Error', 'Empty credentials') }
   };
 
   function handleSignUpPage() {
@@ -59,7 +81,7 @@ const SignInscreen = ({ navigation }) => {
     <SafeAreaView style={{ flex: 1, backgroundColor: Colors.background }}>
       <ScrollView style={{ flex: 1 }} >
         <View style={{ flex: 1 }}>
-          <Header1 onRightPress={() => { navigation.navigate('Home') }} txtStyles={{ borderBottomWidth: 1, borderColor: Colors.primary }} />
+          <Header1 onRightPress={() => { navigation.navigate('Home') }} txtStyles={{ borderBottomWidth: 1, borderColor: Colors.primary }} RightIcon={false} />
 
 
           <View style={{ paddingHorizontal: widthToDp(10), paddingTop: heightToDp(15), gap: 10 }}>

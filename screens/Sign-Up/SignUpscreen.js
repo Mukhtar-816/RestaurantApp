@@ -8,6 +8,8 @@ import SvgImport from '../../components/SvgImport.component'
 import google from '../../assets/Svgs/google'
 import Button from '../../components/Button.component'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
+import { useDispatch } from 'react-redux'
+import { AddNewUser, AddUser } from '../../redux/Slices/UserSlice'
 
 const OtherOptionsButton = ({ ...props }) => {
 
@@ -40,13 +42,24 @@ const SignUpscreen = ({ navigation }) => {
 
   //State Management
   const [email, setEmail] = useState(null);
+  const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
-  const [confirmPassword, setConfirmPassword] = useState(null);
+  // const [confirmPassword, setConfirmPassword] = useState(null);
   const [isCheck, setIsCheck] = useState(false);
+
+
+  //constants
+  const dispatch = useDispatch();
 
 
   function handleSignUp() {
     // sign in with account
+    if (email != null || password != null || username != null) {
+      if (email.length > 0 && password.length > 0 && username.length > 0) {
+        dispatch(AddNewUser({ email: email, password: password, username: username }))
+        navigation.navigate('SignIn')
+      }
+    }
   };
 
   function handleSignInPage() {
@@ -58,7 +71,7 @@ const SignUpscreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: Colors.background }}>
       <ScrollView>
-        <Header1 onRightPress={() => { navigation.navigate('Home') }} txtStyles={{ borderBottomWidth: 1, borderColor: Colors.primary }} />
+        <Header1 onRightPress={() => { navigation.navigate('Home') }} txtStyles={{ borderBottomWidth: 1, borderColor: Colors.primary }} RightIcon={false} />
 
 
         <View style={{ paddingHorizontal: widthToDp(10), paddingTop: heightToDp(15), gap: 10 }}>
@@ -76,14 +89,19 @@ const SignUpscreen = ({ navigation }) => {
             style={{ paddingHorizontal: widthToDp(6) }} title={'Email Address'} />
 
           <TextForm
+            value={username}
+            onChangeText={(username) => { setUsername(username) }}
+            style={{ paddingHorizontal: widthToDp(6) }} title={'Username'} />
+
+          <TextForm
             value={password}
             onChangeText={(password) => { setPassword(password) }}
             style={{ paddingHorizontal: widthToDp(6) }} title={'Password'} />
 
-          <TextForm
+          {/* <TextForm
             value={confirmPassword}
             onChangeText={(confirmPassword) => { setConfirmPassword(confirmPassword) }}
-            style={{ paddingHorizontal: widthToDp(6) }} title={'Confirm Password'} />
+            style={{ paddingHorizontal: widthToDp(6) }} title={'Confirm Password'} /> */}
         </View>
 
 

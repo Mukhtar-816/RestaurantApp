@@ -11,7 +11,7 @@ const Header1 = ({ ...props }) => {
       <View style={{ alignItems: 'center', paddingTop: heightToDp(5), paddingLeft: widthToDp(45), paddingRight: widthToDp(5), flexDirection: 'row', justifyContent: 'space-between' }}>
         <SvgImport svg={Group} />
 
-        <Pressable onPress={props.onRightPress}><Text style={[styles.Text, props.txtStyles]}>{props.btnTitle != null? props.btnTitle : 'Skip'}</Text></Pressable>
+        {props.RightIcon == false ? null : <Pressable onPress={props.onRightPress}><Text style={[styles.Text, props.txtStyles]}>{props.btnTitle != null ? props.btnTitle : 'Skip'}</Text></Pressable>}
       </View>
     </View>
   )

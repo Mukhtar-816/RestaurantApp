@@ -1,5 +1,5 @@
 import { FlatList, SafeAreaView, ScrollView, StyleSheet, Text, View, Image } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header2 from '../../components/Header2.component'
 import Colors from '../../constants/Color'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
@@ -26,8 +26,7 @@ const Homescreen = ({ navigation }) => {
   const Product = useSelector((state) => state.Products);
   const Cart = useSelector((state) => state.Cart);
 
-
-
+  
   //functions
   function handleLeftIconPress(e) { navigation.navigate('Cart') };
 

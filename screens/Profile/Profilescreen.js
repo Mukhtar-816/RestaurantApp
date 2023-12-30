@@ -7,6 +7,7 @@ import Header2 from '../../components/Header2.component';
 import Entypo from 'react-native-vector-icons/Entypo'
 import TextLine from '../../components/TextLine.component';
 import Button from '../../components/Button.component';
+import { useSelector } from 'react-redux';
 
 
 
@@ -15,7 +16,7 @@ const Profilescreen = ({ navigation, route }) => {
 
   //constanst
   const Img = 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D';
-  const username = 'John Smith';
+  const Users = useSelector((state) => state.Users);
   const profileImage = route.params;
 
 
@@ -34,10 +35,10 @@ const Profilescreen = ({ navigation, route }) => {
 
 
   //constants
-  const Name = 'Mukhtar Shaikh';
-  const Email = '<EMAIL>';
-  const occupation = 'cs - 7';
-  const Phone = '<PHONE>';
+  const Name = Users.map(item => Users.length > 0 ? item.username : 'User');
+  const Email = Users.map(item => Users.length > 0 ? item.email : 'Email');
+  const occupation = Users.map(item => Users.length > 0 ? item.occupation : 'Occupation');
+  const Phone = Users.map(item => Users.length > 0 ? item.Phone : 'Phone');
 
 
 
@@ -109,7 +110,7 @@ export default Profilescreen;
 const styles = StyleSheet.create({
   ProfileImageContainer: {
     marginTop: heightToDp(10),
-    height: 180,
+    height: heightToDp(50),
     width: widthToDp(50),
     alignSelf: 'center',
     backgroundColor: Colors.white,

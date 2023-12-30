@@ -1,5 +1,5 @@
 import { Image, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header2 from '../../components/Header2.component';
 import Colors from '../../constants/Color';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -7,6 +7,7 @@ import { heightToDp, widthToDp } from '../../constants/DimensionsApi';
 import TextForm from '../../components/TextForm.component';
 import ImagePicker from 'react-native-image-crop-picker';
 import Button from '../../components/Button.component';
+import { useSelector } from 'react-redux';
 
 const EditProfilescreen = ({ navigation }) => {
 
@@ -22,7 +23,15 @@ const EditProfilescreen = ({ navigation }) => {
 
     //constanst
     const Img = 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D';
+    const Users = useSelector((state) => state.Users);
 
+    //Fetch user Details
+    useEffect(() => {
+        Users.map(item => {
+            setUsername(item.username)
+            setEmail(item.email)
+        })
+    }, []);
 
 
     //functions
@@ -85,7 +94,7 @@ export default EditProfilescreen;
 const styles = StyleSheet.create({
     ProfileImageContainer: {
         marginTop: heightToDp(10),
-        height: 180,
+        height: heightToDp(50),
         width: widthToDp(50),
         alignSelf: 'center',
         backgroundColor: Colors.white,
