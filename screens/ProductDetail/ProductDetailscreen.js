@@ -10,7 +10,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import TextLine from '../../components/TextLine.component';
 import Button from '../../components/Button.component';
 import { useDispatch, useSelector } from 'react-redux';
-import { AddtoCart, DecreaseQty, IncreaseQty, RemovefromCart } from '../../redux/Slices/CartSlice';
+import { AddtoCart, DecreaseQty, IncreaseQty, RemovefromCart } from '../../redux/Slices/CartSlice/CartSlice';
 
 const ProductDetailscreen = ({ navigation, route }) => {
 

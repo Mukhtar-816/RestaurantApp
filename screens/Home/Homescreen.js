@@ -12,7 +12,7 @@ import TextLine from '../../components/TextLine.component'
 import ProductCard from '../../components/ProductCard.component'
 import SearchBar from '../../components/SearchBar.component'
 import { useDispatch, useSelector } from 'react-redux'
-import { AddtoCart } from '../../redux/Slices/CartSlice'
+import { AddtoCart } from '../../redux/Slices/CartSlice/CartSlice'
 
 
 const Homescreen = ({ navigation }) => {

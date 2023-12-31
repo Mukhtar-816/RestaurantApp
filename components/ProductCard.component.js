@@ -16,7 +16,7 @@ const ProductCard = ({ ...props }) => {
 
                 <View style={[styles.PlusIcon, { marginLeft: widthToDp(3), flexDirection: 'row', gap: 5 }]}>
                     <FontAwesome name={'star'} color={Colors.yellow} size={widthToDp(4)} />
-                    <Text style={{ fontSize: 12, color: Colors.light_txt }}>{props.item.rating.toFixed(0) + '+'}</Text>
+                    <Text style={{ fontSize: 12, color: Colors.light_txt }}>{props.item.rating + '+'}</Text>
                 </View>
 
                 <Pressable onPress={props.onPlusPress} style={styles.PlusIcon}>

@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 
 
-export const FetchApiCall = createAsyncThunk(
+export const ProductsCall = createAsyncThunk(
     'ProductsCall',
     async () => {
-        const response = await fetch('https://user1703523777215.requestly.tech/Products?');
-        const res = await response.json();
+        const response = await axios.get('http://192.168.10.18:3001/getProducts');
+        const res = response.data;
         return res;
     }
 );
@@ -22,8 +23,8 @@ const ProductSlice = createSlice({
         }
     },
     extraReducers: builder => {
-        builder.addCase(FetchApiCall.fulfilled, (state, action) => {
-            action.payload.Products.map(item => state.push(item));
+        builder.addCase(ProductsCall.fulfilled, (state, action) => {
+            action.payload.map(item => state.push(item));
         })
     }
 });

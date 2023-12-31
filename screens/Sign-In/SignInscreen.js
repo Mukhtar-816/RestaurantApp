@@ -54,7 +54,7 @@ const SignInscreen = ({ navigation }) => {
       if (email.length > 0 && password.length > 0) {
         if (Users.length != 0) {
           Users.map(item => {
-            if (item.email == email && item.password == password) {
+            if ((item.email == email || item.username == email) && item.password == password) {
               Alert.alert('Successfully Logged In')
               navigation.navigate('Home')
             }

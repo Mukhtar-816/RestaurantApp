@@ -7,7 +7,7 @@ import { heightToDp, widthToDp } from '../../constants/DimensionsApi'
 import Button from '../../components/Button.component'
 import Entypo from 'react-native-vector-icons/Entypo'
 import { useDispatch, useSelector } from 'react-redux'
-import { DecreaseQty, IncreaseQty, RemovefromCart } from '../../redux/Slices/CartSlice'
+import { DecreaseQty, IncreaseQty, RemovefromCart } from '../../redux/Slices/CartSlice/CartSlice'
 import CartItemCard from '../../components/CartCard.component'
 
 

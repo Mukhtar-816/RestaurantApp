@@ -9,7 +9,8 @@ import google from '../../assets/Svgs/google'
 import Button from '../../components/Button.component'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import { useDispatch } from 'react-redux'
-import { AddNewUser, AddUser } from '../../redux/Slices/UserSlice'
+import { AddNewUser, AddUser, CreateUser } from '../../redux/Slices/UserSlice/UserActions'
+import axios from 'axios'
 
 const OtherOptionsButton = ({ ...props }) => {
 
@@ -51,12 +52,21 @@ const SignUpscreen = ({ navigation }) => {
   //constants
   const dispatch = useDispatch();
 
+  const Data = {
+    "username": username,
+    "password": password,
+    "occupation": null,
+    "phone": null,
+    "email": email
+  };
 
-  function handleSignUp() {
+
+
+  async function handleSignUp() {
     // sign in with account
     if (email != null || password != null || username != null) {
       if (email.length > 0 && password.length > 0 && username.length > 0) {
-        dispatch(AddNewUser({ email: email, password: password, username: username }))
+        dispatch(CreateUser(Data))
         navigation.navigate('SignIn')
       }
     }
@@ -112,7 +122,7 @@ const SignUpscreen = ({ navigation }) => {
 
 
         <View style={{ paddingTop: heightToDp(15) }}>
-          <Button disabled={isCheck ? false : true} title={'Create an account'} onPress={handleSignUp} style={{ paddingHorizontal: widthToDp(5) }} />
+          <Button disabled={isCheck ? false : true} title={'Create an account'} onPress={() => { handleSignUp(username, password, email) }} style={{ paddingHorizontal: widthToDp(5) }} />
         </View>
 
 
